@@ -25,8 +25,6 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const headerWidth = useRef()
 
-  console.log(theme.palette.mode)
-
   useEffect(() => {
     window.innerWidth < 599.95 && setIsSidebarOpen(false)
   }, [])
