@@ -54,7 +54,7 @@ const Invoices = () => {
   return (
     <Box
       sx={{
-        width: width,
+        width,
         [theme.breakpoints.down('sm')]: {
           width: '100%',
         },

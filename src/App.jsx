@@ -1,12 +1,10 @@
 import { Box, CssBaseline, GlobalStyles } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
-import { bgBG } from '@mui/x-data-grid'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import { SidebarCtx } from './context/SidebarContext'
-import { useSetWidth } from './hooks/useSetWidth'
 import Bar from './pages/Bar'
 import Bump from './pages/Bump'
 import Calendar from './pages/Calendar'
@@ -26,12 +24,17 @@ function App() {
   const headerWidth = useRef()
 
   useEffect(() => {
-    window.innerWidth < 599.95 && setIsSidebarOpen(false)
+    if (window.innerWidth < 599.95) setIsSidebarOpen(false)
   }, [])
+
+  const provideValue = useMemo(
+    () => ({ isSidebarOpen, setIsSidebarOpen }),
+    [isSidebarOpen, setIsSidebarOpen]
+  )
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <SidebarCtx.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+      <SidebarCtx.Provider value={provideValue}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <GlobalStyles

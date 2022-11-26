@@ -55,6 +55,7 @@ const columns = [
           alignItems='center'
           color='#fff'
           backgroundColor={
+            // eslint-disable-next-line no-nested-ternary
             access === 'admin'
               ? 'hsl(160, 50%, 35%)'
               : access === 'manager'
@@ -88,7 +89,7 @@ const Team = () => {
       <Box
         sx={{
           height: '70vh',
-          width: width,
+          width,
           [theme.breakpoints.down('sm')]: {
             width: '100%',
           },

@@ -25,7 +25,7 @@ const Dashboard = ({ headerWidth }) => {
   return (
     <Box
       sx={{
-        width: width,
+        width,
         [theme.breakpoints.down('sm')]: {
           width: '100%',
         },
@@ -162,7 +162,7 @@ const Dashboard = ({ headerWidth }) => {
               </Box>
             </Box>
             <Box height='250px' m='-20px 0 0 0'>
-              <BumpChart isDashboard={true} />
+              <BumpChart isDashboard />
             </Box>
           </Box>
         </Grid>
@@ -177,7 +177,7 @@ const Dashboard = ({ headerWidth }) => {
               display='flex'
               justifyContent='space-between'
               alignItems='center'
-              borderBottom={`4px solid`}
+              borderBottom='4px solid'
               borderColor='bg.main'
               colors='red'
               p='15px'
@@ -197,7 +197,7 @@ const Dashboard = ({ headerWidth }) => {
                 display='flex'
                 justifyContent='space-between'
                 alignItems='center'
-                borderBottom={`4px solid`}
+                borderBottom='4px solid'
                 borderColor='bg.main'
                 p='15px'
               >
@@ -271,7 +271,7 @@ const Dashboard = ({ headerWidth }) => {
               Sales Quantity
             </Typography>
             <Box height='250px'>
-              <BarChart isDashboard={true} />
+              <BarChart isDashboard />
             </Box>
           </Box>
         </Grid>
@@ -286,7 +286,7 @@ const Dashboard = ({ headerWidth }) => {
               Geography Based Traffic
             </Typography>
             <Box height='200px'>
-              <GeographyChart isDashboard={true} />
+              <GeographyChart isDashboard />
             </Box>
           </Box>
         </Grid>

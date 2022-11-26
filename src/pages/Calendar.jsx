@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import '@fullcalendar/react/dist/vdom'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
+import '@fullcalendar/react/dist/vdom'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import { SidebarCtx } from '../context/SidebarContext'
 import { Box, useTheme } from '@mui/system'
-import { Typography } from '@mui/material'
+import React, { useContext, useEffect, useRef } from 'react'
 import PageHeader from '../components/PageHeader'
+import { SidebarCtx } from '../context/SidebarContext'
 
 const Calendar = () => {
   const theme = useTheme()
@@ -18,6 +17,7 @@ const Calendar = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      // eslint-disable-next-line no-underscore-dangle
       calendarApiRef.current._calendarApi.view.calendar.updateSize()
     }, 400)
     return () => clearTimeout(timer)
@@ -29,7 +29,7 @@ const Calendar = () => {
     calendarApi.unselect()
     if (title) {
       calendarApi.addEvent({
-        id: id.current++,
+        id: id.current + 1,
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
@@ -40,6 +40,7 @@ const Calendar = () => {
 
   const handleEventClick = (clickInfo) => {
     if (
+      // eslint-disable-next-line no-restricted-globals
       confirm(
         `Are you sure you want to delete the event '${clickInfo.event.title}'`
       )

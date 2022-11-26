@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 
 export function useCurrentWidth() {
   let [width, setWidth] = useState(window.innerWidth)

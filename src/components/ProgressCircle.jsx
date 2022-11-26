@@ -13,7 +13,7 @@ const ProgressCircle = ({ progress = '0.75', size = '40' }) => {
         width: `${size}px`,
         height: `${size}px`,
       }}
-    ></Box>
+    />
   )
 }
 

@@ -15,7 +15,7 @@ const Geography = () => {
         border={`1px solid ${theme.palette.text.main}`}
         borderRadius='4px'
         sx={{
-          width: width,
+          width,
           [theme.breakpoints.down('sm')]: {
             width: '100%',
           },

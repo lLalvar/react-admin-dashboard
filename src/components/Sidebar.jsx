@@ -108,14 +108,13 @@ const Sidebar = () => {
         transition: 'min-width 300ms ease-in-out',
         opacity: 1,
         [theme.breakpoints.down('sm')]: {
-          opacity: opacity,
+          opacity,
         },
       }}
     >
       <Box
         sx={{
           zIndex: 100,
-          position: 'fixed',
           position: 'absolute',
           height: '100%',
           backgroundColor: 'bg.secondary',
@@ -300,7 +299,7 @@ const Sidebar = () => {
             top: '0',
             left: '0',
           }}
-        ></Box>
+        />
       )}
     </Box>
   )

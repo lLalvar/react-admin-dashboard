@@ -13,7 +13,7 @@ const Bar = () => {
     <Box
       height='70vh'
       sx={{
-        width: width,
+        width,
         [theme.breakpoints.down('sm')]: {
           width: '100%',
         },

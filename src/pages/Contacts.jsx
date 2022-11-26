@@ -1,5 +1,4 @@
 import { useTheme } from '@emotion/react'
-import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 import React from 'react'
@@ -70,7 +69,7 @@ const Contacts = () => {
       <Box
         sx={{
           height: '70vh',
-          width: width,
+          width,
           [theme.breakpoints.down('sm')]: {
             width: '100%',
           },

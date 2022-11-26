@@ -1,7 +1,7 @@
-import React from 'react'
-import { ResponsiveBar } from '@nivo/bar'
-import { mockBarData } from '../data/mockData'
 import { useTheme } from '@emotion/react'
+import { ResponsiveBar } from '@nivo/bar'
+import React from 'react'
+import { mockBarData } from '../data/mockData'
 
 const BarChart = ({ isDashboard = false }) => {
   const theme = useTheme()
@@ -103,9 +103,7 @@ const BarChart = ({ isDashboard = false }) => {
       ]}
       role='application'
       ariaLabel='Nivo bar chart demo'
-      barAriaLabel={function (e) {
-        return e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue
-      }}
+      barAriaLabel={(e) => `${e.id}:${e.formattedValue} in country: ${e}`}
     />
   )
 }

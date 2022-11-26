@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react'
+import { ResponsiveBump } from '@nivo/bump'
 import React from 'react'
 import { mockBumpData } from '../data/mockData'
-import { ResponsiveBump } from '@nivo/bump'
 
 const BumpChart = ({ isDashboard = false }) => {
   const theme = useTheme()

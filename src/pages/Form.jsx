@@ -1,4 +1,4 @@
-import { Box, Typography, TextField, Button } from '@mui/material'
+import { Box, TextField, Button } from '@mui/material'
 import * as yup from 'yup'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Formik } from 'formik'
